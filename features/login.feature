@@ -5,6 +5,7 @@ Funcionalidade: Login
     Sendo um usuário previamente cadastrado
     Posso acessar o sistema com o meu email e senha
 
+    @login_happy
     Cenario: Acesso
       Quando eu faço login com "tony@stark.com" e "pwd123"
       Então devo ser autenticado

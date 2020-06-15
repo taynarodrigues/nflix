@@ -3,11 +3,14 @@ Quando("eu faço login com {string} e {string}") do |email, password|
   find("#emailId").set email 
   find("#passId").set password
   click_button "Entrar"
-  sleep 5
+  # sleep 5
 end
 
 Então("devo ser autenticado") do
-  pending # Write code here that turns the phrase above into concrete actions
+  js_script = 'return window.localStorage.getItem("default_auth_token");'
+  token = page.execute_script(js_script)
+  # puts token
+   expect(token.length).to be 147 # verificar o token
 end
 
 Então("devo ver {string} na área logada") do |string|

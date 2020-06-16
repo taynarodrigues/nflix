@@ -12,14 +12,22 @@ Funcionalidade: Login
       E devo ver "Tony Stark" na área logada
 
     @login_hapless
-    Esquema do Cenario: Login sem sucesso
-      Quando eu faço login com <email> e <senha>
+    Cenario: Senha inválida
+      Quando eu faço login com "tony@stark.com" e "abc123"
       Então não devo ser autenticado
-      E devo ver a mensagem de alerta <texto>
+      E devo ver a mensagem de alerta "Usuário e/ou senha inválidos"
 
-      Exemplos:
-        | email             | senha     | texto                          |
-        | "tony@stark.com"  | "abc123"  | "Usuário e/ou senha inválidos" |
-        | "404@yahoo.com"   | "abc123"  | "Usuário e/ou senha inválidos" |
-        | ""                | "abcxpto" | "Opps. Cadê o email?"          |
-        | "teste@gmail.com" | ""        | "Opps. Cadê a senha?"          |
+    Cenario: Usuário não existe
+      Quando eu faço login com "404@yahoo.com" e "abc123"
+      Então não devo ser autenticado
+      E devo ver a mensagem de alerta "Usuário e/ou senha inválidos"
+
+    Cenário: Email não informado
+      Quando eu faço login com "" e "abcxpto"
+      Então não devo ser autenticado
+      E devo ver a mensagem de alerta "Opps. Cadê o email?"
+
+    Cenario: Senha não informada
+      Quando eu faço login com "teste@gmail.com" e ""
+      Então não devo ser autenticado
+      E devo ver a mensagem de alerta "Opps. Cadẽ a senha?"

@@ -5,37 +5,25 @@ Funcionalidade: Cadastro de filmes
     Sendo um gestor de catálogo
     Posso cadastrar um novo filme
 
-    Cenario: Filme disponível
-        Dado que "Vingadores Ultimato" é um novo filme
-        E o status deste filme é "Disponível"
-        E o ano de lançamento é "2019"
-        E a data de estréia é "24/04/2019"
-        E os atores são "Robert Downey Jr, Chris Evans, Brie Larson, Scarlett Johansson"
-        E a sinopse do filme é "Após Thanos eliminar metade do universo, os vingadores terão que resolver esta treta."
-        E escolhi uma capa muito bonita
-        Quando eu faço o cadastro deste filme
-        Então devo ver o novo filme na lista
+    Esquema do Cenario: Novo Filme
 
-      Cenario: Filme em pré venda
-        Dado que "Homem Aranha Longe de Casa" é um novo filme
-        E o status deste filme é "Pré Venda"
-        E o ano de lançamento é "2019"
-        E a data de esteia é "04/07/2019"
-        E os atores são "Tom Holland, Samuel L. Jackson, Marisa Tomei"
-        E a sinopse do filme é "Peter Parker está em uma viagem pela Europa e é convocado por Nick Fury para uma missão."
-        E escolhi uma capa muito bonita
-        Quando eu faço o cadastro deste filme
-        Então devo ver o novo filme na lista
-      
-      Cenario: Filme em breve
-        Dado que "Coringa" é um novo filme
-        E o status deste filme é "Em breve"
-        E o ano de lançamento é "2019"
-        E os atores são "Joaquin Phoenix"
-        E a sinopse do filme é "O comediante falido Arthur Fleck encontra violentos bandidos pelas ruas de Gotham City."
-        Quando eu faço o cadastro deste filme
-        Então devo ver o novo filme na lista
+      Dado que <titulo> é um novo filme
+      E o status deste filme é <status>
+      E o ano de lançamento é <ano>
+      E a data de estréia é <data>
+      E os atores são <atores>
+      E a sinopse do filme é <sinopse>
+      E escolhi uma <capa> muito bonita
+      Quando eu faço o cadastro deste filme
+      Então devo ver o novo filme na lista.
 
+      Exemplos:
+      | titulo                     | status    | ano  | data       | atores                                                       | sinopse                                                                                 | capa        |
+      | Vingadores Ultimato        | Disponível| 2019 | 24/04/2019 | Robert Downey Jr, Chris Evans, Brie Larson, Scarlett Johansso| Após Thanos eliminar metade do universo, os vingadores terão que resolver esta treta.   | ultimato.jpg|
+      | Homem Aranha Longe de Casa | Pré Venda | 2019 | 04/07/2019 | Tom Holland, Samuel L. Jackson, Marisa Tomei                 | Peter Parker está em uma viagem pela Europa e é convocado por Nick Fury para uma missão.| spider.jpg  |
+      | Coringa                    | Em breve  | 2019 | 04/07/2019 |     Joaquin Phoenix                                          | O comediante falido Arthur Fleck encontra violentos bandidos pelas ruas de Gotham City. | coringa.jpg |
+
+ 
       Cenario: Sem nome
         Quando eu tento cadastrar um filme sem o nome
         Então devo ver a notificação "Oops - Filme sem titulo. Pode isso Arnaldo?"
@@ -57,5 +45,3 @@ Funcionalidade: Cadastro de filmes
         Quando eu faço o cadastrado deste filme
         Então devo ver a notificação "Opps - Este título já existe no Ninjaflix."
 
-        #Especificando 8 cenários - Cadastro de filmes
-        #Doc escrita em BDD

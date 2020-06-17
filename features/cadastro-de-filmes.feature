@@ -16,7 +16,7 @@ Funcionalidade: Cadastro de filmes
 
       Exemplos:
           | codigo      |
-          | "ultimato " |
+          | "ultimato"  |
           | "spider"    |
           | "jocker"    |
 

@@ -11,7 +11,7 @@ spider:
   status: "Pré Venda"
   year: 2019 
   release_date: "04/07/2019"
-  cast:[" Tom Holland", "Samuel L. Jackson", " Marisa Tomei " ]
+  cast: [" Tom Holland", "Samuel L. Jackson", "Marisa Tomei"]
   overview: Peter Parker está em uma viagem pela Europa e é convocado por Nick Fury para uma missão.
   cover: spider.jpg
 jocker:

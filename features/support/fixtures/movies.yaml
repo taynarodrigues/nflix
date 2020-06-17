@@ -1,0 +1,21 @@
+#Arquivo no formato YAML
+blog:
+  nome: QA Ninja Blog
+  url: https://medium.com/qaninja
+  post:
+    titulo: Como usar arquivos YAML
+    data: 17/06/2020
+
+
+#Arquivo no formato JSON
+
+{
+  "blog": {
+    "nome": "QA Ninja Blog",
+    "url": "https"//medium.com/qaninja,
+    "post":{
+      "titulo": "Como usar arquivos YAML",
+      "data": "17/06/2020"
+    }
+  }
+}

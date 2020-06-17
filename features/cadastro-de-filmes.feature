@@ -5,25 +5,21 @@ Funcionalidade: Cadastro de filmes
     Sendo um gestor de catálogo
     Posso cadastrar um novo filme
 
+    @new_movie
     Esquema do Cenario: Novo Filme
+        O gestor de catálogo cadastra um novo filme através do formulário
+        e um novo registro é inserido no catálogo Ninjaflix
 
-      Dado que <titulo> é um novo filme
-      E o status deste filme é <status>
-      E o ano de lançamento é <ano>
-      E a data de estréia é <data>
-      E os atores são <atores>
-      E a sinopse do filme é <sinopse>
-      E escolhi uma <capa> muito bonita
+      Dado que <codigo> é um novo filme
       Quando eu faço o cadastro deste filme
       Então devo ver o novo filme na lista.
 
       Exemplos:
-      | titulo                     | status    | ano  | data       | atores                                                       | sinopse                                                                                 | capa        |
-      | Vingadores Ultimato        | Disponível| 2019 | 24/04/2019 | Robert Downey Jr, Chris Evans, Brie Larson, Scarlett Johansso| Após Thanos eliminar metade do universo, os vingadores terão que resolver esta treta.   | ultimato.jpg|
-      | Homem Aranha Longe de Casa | Pré Venda | 2019 | 04/07/2019 | Tom Holland, Samuel L. Jackson, Marisa Tomei                 | Peter Parker está em uma viagem pela Europa e é convocado por Nick Fury para uma missão.| spider.jpg  |
-      | Coringa                    | Em breve  | 2019 | 04/07/2019 |     Joaquin Phoenix                                          | O comediante falido Arthur Fleck encontra violentos bandidos pelas ruas de Gotham City. | coringa.jpg |
+          | codigo      |
+          | "ultimato " |
+          | "spider"    |
+          | "jocker"    |
 
- 
       Cenario: Sem nome
         Quando eu tento cadastrar um filme sem o nome
         Então devo ver a notificação "Oops - Filme sem titulo. Pode isso Arnaldo?"

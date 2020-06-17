@@ -4,9 +4,7 @@ Quando("eu faço login com {string} e {string}") do |email, password|
 end
 
 Então("devo ser autenticado") do
-  js_script = 'return window.localStorage.getItem("default_auth_token");'
-  token = page.execute_script(js_script)
-   expect(token.length).to be 147 # verificar o token
+   expect(get_token.length).to be 147 # verificar o token
 end
 
 Então("devo ver {string} na área logada") do |expect_name|
@@ -15,9 +13,7 @@ Então("devo ver {string} na área logada") do |expect_name|
 end
 
 Então("não devo ser autenticado") do
-   js_script = 'return window.localStorage.getItem("default_auth_token");' 
-   token = page.execute_script(js_script)
-   expect(token).to be nil #O token é Nullo quando o login é sem sucesso
+   expect(get_token).to be nil #O token é Nullo quando o login é sem sucesso
 
 end
 

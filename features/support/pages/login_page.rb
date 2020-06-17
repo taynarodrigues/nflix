@@ -10,4 +10,8 @@ class LoginPage
     find("input[name=password]").set pass
     click_button "Entrar"
   end
+
+  def alert
+    find('.alert').text
+  end
 end

@@ -12,9 +12,8 @@ Então("devo ser autenticado") do
 end
 
 Então("devo ver {string} na área logada") do |expect_name|
-  user = find('.sidebar-wrapper .user .info span')
-  # expect(page).to have_text expect_name #Conténs
-  expect(user.text).to eql expect_name 
+  @sidebar = SideBarView.new
+  expect(@sidebar.logged_user).to eql expect_name 
 
 end
 
@@ -27,6 +26,6 @@ Então("não devo ser autenticado") do
 end
 
 Então("devo ver a mensagem de alerta {string}") do |expect_message|
-  alert = find('.alert')
-  expect(alert.text).to eql expect_message
+  @login = LoginPage.new
+  expect(@login.alert).to eql expect_message
 end

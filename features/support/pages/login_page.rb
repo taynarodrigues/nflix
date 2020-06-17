@@ -15,3 +15,4 @@ class LoginPage
     find('.alert').text
   end
 end
+

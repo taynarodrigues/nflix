@@ -19,5 +19,7 @@ class MoviePage
         actor.set a
         actor.send_keys :tab
       end
+
+      find("textarea[name=overview]").set movie["overview"]
     end
 end

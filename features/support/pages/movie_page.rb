@@ -21,5 +21,12 @@ class MoviePage
       end
 
       find("textarea[name=overview]").set movie["overview"]
+
+      cover_file = File.join(Dir.pwd, "features/support/fixtures/cover/" + movie["cover"])
+      cover_file = cover_file.tr("/", "\\") if OS.windows?
+
+      Capybara.ignore_hidden_elements = false
+      attach_file("upcover", cover_file)
+      Capybara.ignore_hidden_elements = true
     end
 end

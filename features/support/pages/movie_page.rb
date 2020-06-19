@@ -39,5 +39,9 @@ class MoviePage
 
       find("#create-movie").click 
     end
+
+    def movie_tr(movie)
+      find('table tbody tr', text: movie['title'])
+    end
 end
 

@@ -6,7 +6,7 @@ end
 
 Quando("eu faço o cadastro deste filme") do
   @movie_page.add
-  @movie_page.create(@movie['title'])
+  @movie_page.create(@movie)
   sleep 3
 end
 

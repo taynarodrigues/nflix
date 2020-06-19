@@ -5,7 +5,10 @@ class MoviePage
       find('.nc-simple-add').click
     end
 
-    def create(title)
-      find('input[name=title]').set title
+    def create(movie)
+      find("input[name=title]").set movie["title"]
+
+      find("input[placeholder=Status]").click
+      find(".el-select-dropdown__item", text: movie["status"]).click
     end
 end

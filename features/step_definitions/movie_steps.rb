@@ -1,6 +1,7 @@
 Dado("que {string} é um novo filme") do |movie_code|
   file = YAML.load_file(File.join(Dir.pwd, "features/support/fixtures/movies.yaml"))
   @movie = file[movie_code]
+  Database.new.delete_movie(@movie["title"])
 end
 
 Quando("eu faço o cadastro deste filme") do
@@ -18,3 +19,4 @@ Então("devo ver a notificação {string}") do |expect_alert|
   alert = 
   expect(@movie_page.alert).to eql expect_alert
 end
+
